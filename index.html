@@ -49,13 +49,6 @@
 
 
 
-	<div class="container">
-		<div class="new">
-			<div class="new-item">
-				<div class="new-item--button">1</div>
-			</div>
-		</div>
-	</div>
 	<h1>Пересчёт велечин</h1>
 	<script type="text/javascript">
 		// Упражнение 2.1. Веб-сценарий
@@ -175,14 +168,46 @@
 		
 	</script>
 	<script>
-		const ins = window.prompt('Величина в дюймах', 0);
-		if (ins == null)
-			window.document.write('<р>Величина не была ' +
-				'введена</р>');
-		else {
-			const cents = ins * 2.54;
-			window.document.write('<p>', cents, '</p>');
-		}
+		// let gop = ''
+		// const ins = window.prompt('Величина в дюймах', 0)
+		// const inc = window.prompt('Велечина в сантиметрах', 0)
+		// if (ins == null)
+		// 	window.document.write('<р>Величина не была ' +
+		// 		'введена</р>')
+		// else {
+		// 	if(Math.floor(ins) == 1)
+		// 		gop = ' дюйм'
+		// 	else if(Math.floor(ins) > 1 & Math.floor(ins) < 5)
+		// 		gop = ' дюйма'
+		// 	else
+		// 		gop = ' дюймов'
+			
+
+
+		// 	const cents = ins * 2.54
+		// 	window.document.write('<p>', Math.floor(cents),'</p>')
+		// 	window.document.write('<p>', ins, gop, '</p>')
+			
+		// }
+		
+
+
+		// Д.з номер 2
+		// let number = 10;
+		// for(let i = 1; i <= 20; ++i) {
+		// 	window.document.write(number * i,': ', Math.sqrt(number * i), '</br>') 
+		// }
+
+		// // Д.з номер 3
+		// var com, i = 0, sum = 0;
+		// while (com != 0){
+		// 	com = Number(window.prompt('Введите число'));
+		// 	++i;
+		// 	sum = sum + com
+		// }
+		// window.document.write((sum / i))		 	
+
+
 	</script>
 
 	<script src="js/scripts.min.js"></script>
