@@ -7,8 +7,8 @@
 </head>
 <body>
     <script>
-        let a = 1
-        let b = 3
+        // let a = 1
+        // let b = 3
         // function glass(a,b){
         //     let c = 0
         //     c = a
@@ -18,13 +18,19 @@
         // }
         // window.document.write(glass(a,b))
 
-        function num(a,b){
-            a = a + b
-            b = a - b
-            a = a - b
-            return "a = "+ a + " b = " + b
-        }
-        window.document.write(num(a,b))
+        // function num(a,b){
+        //     a = a + b
+        //     b = a - b
+        //     a = a - b
+        //     return "a = "+ a + " b = " + b
+        // }
+        // window.document.write(num(a,b))
+
+
+        ins = window.prompt('Велечина в дюймах c pfgznjq', 0);
+        ins = ins.replace(',' , '.');
+		const cents = ins * 2.54;
+		window.document.write('<p>', cents, '</p>');
     </script>
 </body>
 </html>
