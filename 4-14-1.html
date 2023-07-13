@@ -36,38 +36,21 @@
 
 
         // let num = window.prompt('Введите числа через запятую', 0)
-        // const words = num.split(',')
-        // window.document.write(words.length)
+        // const array = num.split(',')
+        // let l = array.length,i,summ = 0;
+        // for(i = 0; i < l; i++){
+        //     summ += Number(array[i]);
+        // }
+        // summ = summ / l;
+        // window.document.write(summ)
 
 
-    function getAverage() {
-    var inputValue = document.getElementById("input").value;
-    var numbers = inputValue.split(",");
-    var average = 0;
-    for (var i = 0; i < numbers.length; i++) {
-        average += parseInt(numbers[i]);
-    }
-    alert("Среднее арифметическое: " + average / numbers.length);
-}
+        // Задача Напишите страницу 4.14.2.html со сценарием, который выведет текущую дату
+        // в формате:
+        // Сегодня <число> <название месяца> <год> г.
 
-        var numbers = [];
-        
-        // Получаем список чисел от пользователя
-        window.addEventListener("load", function() {
-            var input = document.getElementById("numbers");
-            for (var i = 0; i < input.value.length; i++) {
-                numbers.push(+input.value[i]); // Преобразуем строку в число
-            }
-            
-            // Выводим список чисел на экран
-            alert("Список чисел: " + numbers.join(", "));
-            
-            // Получаем среднее арифметическое списка чисел
-            var average = numbers.reduce(function(a, b) { return a + b; }, 0) / numbers.length;
-            
-            // Обновляем среднее арифметическое на странице
-            document.getElementById("average").innerHTML = average.toFixed(2);
-        });
+        var date = new Date();
+        window.document.write("Сегодня " + date.getDate() + ", " + date.getMonth() + ", " + date.getFullYear())
 
     </script>
 </body>
