@@ -49,8 +49,28 @@
         // в формате:
         // Сегодня <число> <название месяца> <год> г.
 
-        var date = new Date();
-        window.document.write("Сегодня " + date.getDate() + ", " + date.getMonth() + ", " + date.getFullYear())
+        // var date = new Date();
+        // window.document.write("Сегодня " + date.getDate() + ", " + date.getMonth() + ", " + date.getFullYear())
+
+        let numm = window.prompt('Введите числа через запятую')
+        let even = []
+        let not_even = []
+
+        const array = numm.split(',')
+        for(let i = 0; i < array.length; i++){
+            if(array[i] % 2 == 0)
+                even.push(array[i])
+            else
+                not_even.push(array[i])
+                
+        }
+        window.document.write(even)
+        window.document.write('<hr>')
+        window.document.write(not_even)
+        
+        
+
+        
 
     </script>
 </body>
