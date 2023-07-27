@@ -36,6 +36,18 @@
                 background-color: black;
                 cursor: auto;
             }
+            #preview {
+                position: absolute;
+                width: 120px;
+                height: 80px;
+                background: left/contain no-repeat;
+                display: none;
+            }
+            #preview.active {
+                display: block;
+            }
+
+
         </style>
     </head>
     <body>
@@ -47,22 +59,48 @@
             <div id="2">2</div>
             <div id="3">3</div>
         </nav>
+        <div id="preview"></div>
     </body>
 </html>
     <script>
-        const output = window.document.getElementByld('output');
+        const preview = window.document.getElementByld('preview');
+
+        const output = window.document.getElementById('output');
+
         const buttons = window.document.querySelectorAll('nav div');
+
         let current = buttons[0];
 
         function showimage() {
-        current = this;
-        output.src = 'images/' + this.id + '.jpg';
-        buttons.forEach((el) => {
-            if (el == this)
-                el.className = 'active';
-            else
-                el.className = '';
+            current = this;
+            output.src = getlmageURL(this.id) ;
+            buttons.forEach((el) => {
+                if (el == this)
+                    el.className = 'active';
+                else
+                    el.className = '';
             }) ;
         }
+
+
+        function getimageURL(fileName) {
+            return 'images/' + fileName + '.jpg'
+        }
+
+        function showPreview(evt) {
+            preview.style.left = evt.pageX + 'px';
+            preview.style.top = evt.pageY + 'px';
+            preview.style.backgroundimage = 'url(' + getlmageURL(this.id) + ') ' ;
+            preview.className = 'active';
+        }
+
+
+
+        buttons.forEach(
+            (el) => {
+                el.addEventListener('click', showimage);
+            }
+        ) ;
+
 
     </script>
