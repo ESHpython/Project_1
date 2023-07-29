@@ -64,9 +64,7 @@
 </html>
     <script>
         const preview = window.document.getElementByld('preview');
-
         const output = window.document.getElementById('output');
-
         const buttons = window.document.querySelectorAll('nav div');
 
         let current = buttons[0];
@@ -82,7 +80,6 @@
             }) ;
         }
 
-
         function getimageURL(fileName) {
             return 'images/' + fileName + '.jpg'
         }
@@ -94,11 +91,15 @@
             preview.className = 'active';
         }
 
-
+        function hidePreview() {
+            preview.className = '';
+        }
 
         buttons.forEach(
             (el) => {
                 el.addEventListener('click', showimage);
+                el.addEventListener ('mouseover', showPreview) ;
+                el.addEventListener ('mouseout', hidePreview) ;
             }
         ) ;
 
