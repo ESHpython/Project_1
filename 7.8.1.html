@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Добавляем обработчик события keydown на секцию тела страницы -->
+    <script>
+        window.addEventListener("keydown", function(event) {
+            // Получаем код нажатой клавиши, используя свойство keyCode объекта event
+            var keyCode = event.keyCode;
+            
+            // Выводим код клавиши в десятичном виде
+            console.log("Десятичный код клавиши: " + keyCode);
+            
+            // Преобразуем код клавиши из десятичного в шестнадцатеричный
+            var hexKeyCode = keyCode.toString(16);
+            console.log("Шестнадцатеричный код клавиши: " + hexKeyCode);
+        });
+    </script>
+
+</body>
+</html>

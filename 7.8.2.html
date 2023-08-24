@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>7.8.2</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- создаем элемент -->
+    <div class=“box”></div>
+
+    <!-- добавляем обработчик события мыши -->
+    <script>
+        // получаем элемент
+        var box = document.querySelector(".box");
+
+        // добавляем обработчик событий мыши
+        document.addEventListener("mousemove", function(event) {
+            // сдвигаем элемент на позицию курсора
+            box.style.left = event.clientX + "px";
+            box.style.top = event.clientY + "px";
+        });
+    </script>
+</body>
+</html>

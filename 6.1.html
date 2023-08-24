@@ -19,7 +19,7 @@
                 width: 50%;
                 margin: 30px auto auto;
             }
-            nav div {
+            nav a {
                 width: 20pt;
                 height: 20pt;
                 font-size: 20pt;
@@ -30,8 +30,10 @@
                 color: black;
                 background-color: white;
                 cursor: pointer;
+                display: block;
+                text-decoration: none;
             }
-            nav div.active {
+            nav a.active {
                 color: white;
                 background-color: black;
                 cursor: auto;
@@ -46,63 +48,52 @@
             #preview.active {
                 display: block;
             }
-
-
         </style>
     </head>
     <body>
         <section>
             <img id="output" src="images/1.jpg">
         </section>
-        <nav>
-            <div id="1" class="active">1</div>
-            <div id="2">2</div>
-            <div id="3">3</div>
+        <nav id="buttonset">
+            <a href="images/1.jpg" class="active">1</a>
+            <a href="images/2.jpg">2</a>
+            <a href="images/3.jpg">3</a>
         </nav>
         <div id="preview"></div>
     </body>
 </html>
-    <script>
-        const preview = window.document.getElementByld('preview');
-        const output = window.document.getElementById('output');
-        const buttons = window.document.querySelectorAll('nav div');
-
-        let current = buttons[0];
-
-        function showimage() {
-            current = this;
-            output.src = getlmageURL(this.id) ;
+<script type="text/javascript">
+    const output = window.document.getElementById('output');
+    const buttonset = window.document.getElementById('buttonset');
+    const buttons = window.document.querySelectorAll('nav a');
+    const preview = window.document.getElementById('preview');
+    let current = buttons[0];
+    function showImage(evt) {
+        if (evt.target != this) {
+            current = evt.target;
+            output.src = evt.target.href;
             buttons.forEach((el) => {
-                if (el == this)
+                if (el == evt.target)
                     el.className = 'active';
                 else
                     el.className = '';
-            }) ;
+            });
+            evt.preventDefault();
         }
-
-        function getimageURL(fileName) {
-            return 'images/' + fileName + '.jpg'
-        }
-
-        function showPreview(evt) {
+    }
+    function showPreview(evt) {
+        if (evt.target != this) {
             preview.style.left = evt.pageX + 'px';
             preview.style.top = evt.pageY + 'px';
-            preview.style.backgroundimage = 'url(' + getlmageURL(this.id) + ') ' ;
+            preview.style.backgroundImage = 'url(' + evt.target.href + ')';
             preview.className = 'active';
         }
-
-        function hidePreview() {
+    }
+    function hidePreview(evt) {
+        if (evt.target != this)
             preview.className = '';
-        }
-
-        buttons.forEach(
-            (el) => {
-                el.addEventListener('click', showimage);
-                el.addEventListener ('mouseover', showPreview) ;
-                el.addEventListener ('mouseout', hidePreview) ;
-            }
-        ) ;
-        // Я ПЫТАЛСЯ, ЧЕСТНОЕ СЛОВО, ОНО БЛИН НЕ РАБОТАЕТ((((
-
-
-    </script>
+    }
+    buttonset.addEventListener('click', showImage);
+    buttonset.addEventListener('mouseover', showPreview);
+    buttonset.addEventListener('mouseout', hidePreview);
+</script>
