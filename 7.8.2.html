@@ -1,33 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=`, initial-scale=1.0">
-    <title>7.8.2</title>
+<html>
+  <head>
+    <title>Страница 7.8.2</title>
+    <!-- CSS стили для элемента -->
     <style>
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: #ccc;
-            position: absolute;
-        }
+      .movable-element {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        position: absolute;
+      }
     </style>
-</head>
-<body>
-    <!-- создаем элемент -->
-    <div class=“box”></div>
-
-    <!-- добавляем обработчик события мыши -->
+  </head>
+  <body>
+    <div class="movable-element"></div>
+    
+    <!-- JavaScript код для перемещения элемента -->
     <script>
-        // получаем элемент
-        var box = document.querySelector(".box");
+     var movableElement = document.querySelector('.movable-element');
 
-        // добавляем обработчик событий мыши
-        document.addEventListener("mousemove", function(event) {
-            // сдвигаем элемент на позицию курсора
-            box.style.left = event.clientX + "px";
-            box.style.top = event.clientY + "px";
-        });
+
+    //   // Обработчик события мыши
+    //   window.addEventListener('mousemove', function(event) {
+    //     movableElement.style.left = event.clientX + 'px';
+    //     movableElement.style.top = event.clientY + 'px';
+    //   });
     </script>
-</body>
+  </body>
 </html>
