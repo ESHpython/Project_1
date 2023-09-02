@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>елией</title>
     <style>
         /* Создаём внешний блок */
         .block{
             width: 100px;
             height: 100px;
-            background-color: rgb(255, 0, 0);
+            background: rgb(255, 0, 0);
+            border-radius: 10%;
             position: absolute;
         }
     </style>
 </head>
 <body>
     <div class="block"></div>
-    <script>
-        var block = document.querySelector('.block_style');
+    <script>;
+        var block = document.querySelector('.block');
+           block.addEventListener('mouseover', function(event){
+            this.style.background = "blue";          
+      });
     </script>
 </body>
 </html>

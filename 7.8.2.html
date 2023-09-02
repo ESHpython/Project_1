@@ -7,7 +7,7 @@
       .movable-element {
         width: 100px;
         height: 100px;
-        background-color: gray;
+        background-color: rgb(255, 0, 0);
         position: absolute;
       }
     </style>
@@ -16,15 +16,15 @@
     <div class="movable-element"></div>
     
     <!-- JavaScript код для перемещения элемента -->
-    <script>
+    <script>;
      var movableElement = document.querySelector('.movable-element');
 
 
-    //   // Обработчик события мыши
-    //   window.addEventListener('mousemove', function(event) {
-    //     movableElement.style.left = event.clientX + 'px';
-    //     movableElement.style.top = event.clientY + 'px';
-    //   });
+      // Обработчик события мыши
+      window.addEventListener('mousemove', function(event) {
+        movableElement.style.left = event.clientX + 'px';
+        movableElement.style.top = event.clientY + 'px';
+      });
     </script>
   </body>
 </html>
