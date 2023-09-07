@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Едят ли кошки мошек</title>
+    <style>
+        .circle{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button{
+            margin-top: 10px;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <button class="red">1</button>
+    <button class="yellow">2</button>
+    <button class="green">3</button>
+    <button class="blue">4</button>
+    <button class="purple">5</button>
+    
+    <script>
+            var circle = document.querySelector('.circle');
+
+            var red = document.querySelector('.red');
+            red.addEventListener('click', function(event){
+            circle.style.background = "red";
+            });
+
+            var yellow = document.querySelector('.yellow');
+            yellow.addEventListener('click', function(){
+            circle.style.background = "yellow"
+            });
+
+            var yellow = document.querySelector('.yellow');
+            yellow.addEventListener('click', function(){
+            circle.style.background = "green"
+            });
+
+            var yellow = document.querySelector('.yellow');
+            yellow.addEventListener('click', function(){
+            circle.style.background = "yellow"
+            });
+    </script>
+</body>
+</html>
