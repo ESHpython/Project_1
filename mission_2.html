@@ -9,36 +9,31 @@
             height: 100px;
             width: 100px;
             background-color: red;
-            position: absolute;
-            left: 45px;
-            top: 40%
-        }
-        .left{
-            position: absolute;
-            left: 45%;
-            top: 51%
-        }
-        .right{
-            position: absolute;
-            left: 48.82%;
-            top: 51%
+            position: relative;
+            left: 0;
         }
     </style>
 </head>
 <body>
     <div class="block"></div>
-    <button class="left"> <- </button>
-    <button class="right"> -> </button>
+    <button onclick="left()">лево</button>
+    <button onclick="right()">право</button>
+
     <script>
-        var block = document.querySelector('.block')
-        var left = document.querySelector('.left')
-        var right = document.querySelector('.right')
-        left.addEventListener('click', function(event){
-            var a = block.style.left
-            console.log(a)
-            block.style.left = a - '10px';
+            var block = document.getElementById(".block")
+
+            function left() {
+                var currentLeft = parseFloat(getComputedStyle(block).left);
+                var padding = currentLeft - 10; 
+                block.style.left = padding + "px";
+            }
             
-        });
+            function right() {
+                var currentLeft = parseFloat(getComputedStyle(block).left);
+                var newLeft = currentLeft + 10;
+                block.style.left = newLeft + "px";
+            }
     </script>
+
 </body>
 </html>

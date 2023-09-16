@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Перемещаемый блок</title>
+    <style>
+        #block {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            left: 0;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="block"></div>
+    <button onclick="left()">Влево</button>
+    <button onclick="Right()">Вправо</button>
+
+    <script>
+        var block = document.getElementById("block");
+
+        function left() {
+            var currentleft = parseFloat(getComputedStyle(block).left);
+            var left = currentleft - 10;
+            block.style.left = left + "px";
+            
+        }
+
+        function Right() {
+            var currentLeft = parseFloat(getComputedStyle(block).left);
+            var left = currentLeft + 10;
+            block.style.left = left + "px";
+        }
+    </script>
+</body>
+</html> 

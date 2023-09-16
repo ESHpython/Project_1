@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            width: 10px;
+            position: absolute;
+            padding-left: 10px;
+            padding-top: 6px;
+        }
+        input{
+            margin: 5px;
+            margin-left: 80px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <label id="g">Фамилия</label><input type="text" name="f">
+        <br>
+        <label for="">Имя</label><input type="text" id="n">
+        <br>
+        <label for="">Отчество</label><input type="text" id="o">
+        <br>
+        <label for="">Дата</label><input type="date" id="d">
+        <br>
+        <label for="">Гендер</label>
+        <input id="radio_1" name="guruweba_example_radio" type="radio" value="" />
+        <label for="radio_1">Мужской</label>
+        <br/>
+        <input id="radio_2" name="guruweba_example_radio" type="radio" value="" />
+        <label for="radio_2">Женский</label>
+        <br>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <script>
+        var form = document.getElementById("form");
+        function handleForm(event) { event.preventDefault(); } 
+        form.addEventListener('submit', handleForm);
+
+
+        form.addEventListener('submit', getFormValue);
+
+        function getFormValue(event) {
+            console.log(g);
+        }
+
+        // const f = form.querySelector('[name="f"]'), //получаем поле name
+        // d = form.querySelector('[name="d"]'), //получаем поле age
+        // terms = form.querySelector('[name="terms"]'), //получаем поле terms
+        // plan = form.querySelector('[name="plan"]'); //получаем поле plan
+
+        // const data = {
+        //     name: d.value,
+        //     age: age.value,
+        //     plan: plan.value,
+        //     terms: terms.checked
+        // };
+        
+        // console.log(f)
+    </script>
+</body>
+</html>
